@@ -11,12 +11,13 @@ pipeline {
         pollSCM ( 'H * * * *' )
     }
     parameters {
-        string ( name: url, defaultValue: 'https://github.com/shalu-233/spring-petclinic-dummy.git' )
+        string ( name: 'branch', defaultValue: 'main' )
+        string ( name: 'url', defaultValue: 'https://github.com/shalu-233/spring-petclinic-dummy.git' )
     }
     stages {
         stage('SCM') {
             steps {
-                git branch:  'main',
+                git branch:  "${branch}",
                     url: "${url}"
                 }
             }
