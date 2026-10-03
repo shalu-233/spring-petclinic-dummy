@@ -8,7 +8,7 @@ pipeline {
         timeout ( time: 1, unit: 'HOURS')
     }
     triggers {
-        pollSCM { 'H * * * *' }
+        pollSCM ( 'H * * * *' )
     }
     parameters {
         string ( name: branch, defaultValue: 'main' )
