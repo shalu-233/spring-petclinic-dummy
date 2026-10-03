@@ -17,8 +17,8 @@ pipeline {
     stages {
         stage('SCM') {
             steps {
-                git branch:  "${branch}",
-                    url: "${url}"
+                git branch:  "${params.branch}",
+                    url: "${params.url}"
                 }
             }
         stage('Build') {
